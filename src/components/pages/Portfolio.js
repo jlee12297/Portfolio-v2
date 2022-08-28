@@ -1,24 +1,56 @@
 import React from 'react';
+import portfolio from '../assets/portfolio.json'
 
-export default function Portfolio() {
+function Card(props) {
   return (
-    <div>
-      <h1>Portfolio</h1>
-      <p>
-        Donec a volutpat quam. Curabitur nec varius justo, sed rutrum ligula.
-        Curabitur pellentesque turpis sit amet eros iaculis, a mollis arcu
-        dictum. Ut vel ante eget massa ornare placerat. Etiam nisl orci, finibus
-        sodales volutpat et, hendrerit ut dolor. Suspendisse porta dictum nunc,
-        sed pretium risus rutrum eget. Nam consequat, ligula in faucibus
-        vestibulum, nisi justo laoreet risus, luctus luctus mi lacus sit amet
-        libero. Class aptent taciti sociosqu ad litora torquent per conubia
-        nostra, per inceptos himenaeos. Mauris pretium condimentum tellus eget
-        lobortis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-        Donec placerat accumsan mi, ut congue neque placerat eu. Donec nec ipsum
-        in velit pellentesque vehicula sit amet at augue. Maecenas aliquam
-        bibendum congue. Pellentesque semper, lectus non ullamcorper iaculis,
-        est ligula suscipit velit, sed bibendum turpis dui in sapien.
-      </p>
-    </div>
-  );
+      <div className="card"> 
+        <div className="img-container">
+          <img alt={props.name} src={props.image}/>
+        </div>
+        <div className="content">
+          <ul>
+            <li>
+              <p className="project-title">{props.name}</p>
+            </li>
+            <li>
+            <p className="project-description">{props.description}</p>
+            </li>
+            <li>
+              <a href={props.github} target="_blank">GitHub Link</a> 
+            </li>
+            <li>
+              <a href={props.applink} target="_blank">Deployed App Link</a> 
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
 }
+
+function Container(props) {
+    return <div className="container">{props.children}</div>;
+}
+
+export default function Portfolio() {  
+    return (
+    <>
+    <div className="portfolio">
+    <h1 className="title">My Projects</h1>
+    </div>
+      <Container>
+        {portfolio.map((project) => (
+          <Card 
+          name={project.name}
+          id={project.id}
+          image={project.image}
+          github={project.github}
+          applink={project.applink}
+          description={project.description}
+          />
+        ))}
+      </Container>
+    </>
+    
+    );
+  }
+  

@@ -4,19 +4,62 @@ export default function Contact() {
   return (
     <div>
       <h1>Contact Page</h1>
-      <p>
-        Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
-        molestie urna. Aliquam semper ultrices varius. Aliquam faucibus sit amet
-        magna a ultrices. Aenean pellentesque placerat lacus imperdiet
-        efficitur. In felis nisl, luctus non ante euismod, tincidunt bibendum
-        mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-        posuere, eget tristique dui dapibus. Maecenas fermentum elementum
-        faucibus. Quisque nec metus vestibulum, egestas massa eu, sollicitudin
-        ipsum. Nulla facilisi. Sed ut erat ligula. Nam tincidunt nunc in nibh
-        dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-        conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at
-        rhoncus. Etiam vel condimentum magna, quis tempor nulla.
-      </p>
+      <div className='ContactForm'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-12 text-center'>
+              <div className='contactForm'>
+                <form id='contact-form' noValidate>
+                  {/* Row 1 of form */}
+                  <div className='row formRow'>
+                    <div className='col-6'>
+                      <input
+                        type='text'
+                        name='name'
+                        className='form-control formInput'
+                        placeholder='Name'
+                      ></input>
+                    </div>
+                    <div className='col-6'>
+                      <input
+                        type='email'
+                        name='email'
+                        className='form-control formInput'
+                        placeholder='Email address'
+                      ></input>
+                    </div>
+                  </div>
+                  {/* Row 2 of form */}
+                  <div className='row formRow'>
+                    <div className='col'>
+                      <input
+                        type='text'
+                        name='subject'
+                        className='form-control formInput'
+                        placeholder='Subject'
+                      ></input>
+                    </div>
+                  </div>
+                  {/* Row 3 of form */}
+                  <div className='row formRow'>
+                    <div className='col'>
+                      <textarea
+                        rows={3}
+                        name='message'
+                        className='form-control formInput'
+                        placeholder='Message'
+                      ></textarea>
+                    </div>
+                  </div>
+                  <button className='submit-btn' type='submit'>
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

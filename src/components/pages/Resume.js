@@ -1,16 +1,21 @@
 import React from 'react';
+import resume from '../assets/blankresume.pdf'
 
 export default function Resume() {
   return (
     <div>
       <h1>Resume</h1>
+      <a href={resume} download><img src="https://www.theladders.com/wp-content/uploads/resume-important-800x450.png" alt="resume" /></a><p class="icon-text"><strong>Click the image to download my resume!</strong></p>
       <p>
-        Nunc pharetra finibus est at efficitur. Praesent sed congue diam.
-        Integer gravida dui mauris, ut interdum nunc egestas sed. Aenean sed
-        mollis diam. Nunc aliquet risus ac finibus porta. Nam quis arcu non
-        lectus tincidunt fermentum. Suspendisse aliquet orci porta quam semper
-        imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus
-        in. Sed rhoncus mollis diam, sit amet facilisis lectus blandit at.
+        Some of the coding technologies I've worked with thus far:
+        <ul>
+          <li>HTML + CSS</li>
+          <li>Javascript</li>
+          <li>Node</li>
+          <li>MySQL + Sequelize</li>
+          <li>MongoDB</li>
+          <li>React</li>
+        </ul>
       </p>
     </div>
   );
